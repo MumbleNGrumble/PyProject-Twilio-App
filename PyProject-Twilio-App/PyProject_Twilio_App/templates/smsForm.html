@@ -11,10 +11,16 @@
     <p>
         To:<br />
         {{ form.to }}<br />
+        {% for error in form.to.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}<br />
     </p>
     <p>
         Message:<br />
         {{ form.body }}<br />
+        {% for error in form.body.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
     </p>
     <p><input type="submit" value="Send"></p>
 </form>

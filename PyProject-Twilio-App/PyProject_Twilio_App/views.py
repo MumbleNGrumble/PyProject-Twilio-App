@@ -42,6 +42,10 @@ def about():
 def smsForm():
     form = SMSForm()
 
+    if form.validate_on_submit():
+        flash("To: %s, Body: %s" % (form.to.data, form.body.data))
+        return redirect('/')
+
     return render_template(
         "smsForm.html",
         title="SMS Form",
