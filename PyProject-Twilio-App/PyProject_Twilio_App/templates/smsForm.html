@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<h1>Send an SMS</h1>
+<form action="" method="post" name="sms">
+    {{ form.hidden_tag() }}
+    <p>
+        To:<br />
+        {{ form.to }}<br />
+    </p>
+    <p>
+        Message:<br />
+        {{ form.body }}<br />
+    </p>
+    <p><input type="submit" value="Send"></p>
+</form>
+
+{% endblock %}

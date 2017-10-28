@@ -5,7 +5,8 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c31e66ee-b3d2-42b9-96f4-567986d9b69f</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
+    <ProjectHome>
+    </ProjectHome>
     <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <StartupFile>runserver.py</StartupFile>
     <SearchPath>
@@ -28,6 +29,12 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="config.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PyProject_Twilio_App\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PyProject_Twilio_App\twilio_app.py">
       <SubType>Code</SubType>
     </Compile>
@@ -44,6 +51,8 @@
     <Folder Include="PyProject_Twilio_App\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PyProject_Twilio_App\templates\smsForm.html" />
+    <Content Include="PyProject_Twilio_App\templates\layout.html" />
     <Content Include="requirements.txt" />
     <Content Include="PyProject_Twilio_App\static\content\bootstrap.css" />
     <Content Include="PyProject_Twilio_App\static\content\bootstrap.min.css" />
@@ -70,7 +79,6 @@
     <Content Include="PyProject_Twilio_App\templates\about.html" />
     <Content Include="PyProject_Twilio_App\templates\contact.html" />
     <Content Include="PyProject_Twilio_App\templates\index.html" />
-    <Content Include="PyProject_Twilio_App\templates\layout.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 

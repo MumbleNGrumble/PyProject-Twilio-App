@@ -3,8 +3,10 @@ Routes and views for the flask application.
 """
 
 from datetime import datetime
-from flask import render_template
+from flask import render_template, flash, redirect
 from PyProject_Twilio_App import app
+from .forms import SMSForm
+
 
 @app.route('/')
 @app.route('/home')
@@ -34,4 +36,16 @@ def about():
         title='About',
         year=datetime.now().year,
         message='Your application description page.'
+    )
+
+@app.route('/smsForm', methods=['GET', 'POST'])
+def smsForm():
+    form = SMSForm()
+
+    return render_template(
+        "smsForm.html",
+        title="SMS Form",
+        year=datetime.now().year,
+        message="SMS form page description.",
+        form=form
     )
