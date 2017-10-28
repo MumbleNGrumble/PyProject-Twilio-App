@@ -6,6 +6,7 @@ from datetime import datetime
 from flask import render_template, flash, redirect
 from PyProject_Twilio_App import app
 from .forms import SMSForm
+from .twilio_app import SendSMS
 
 
 @app.route('/')
@@ -44,6 +45,7 @@ def smsForm():
 
     if form.validate_on_submit():
         flash("To: %s, Body: %s" % (form.to.data, form.body.data))
+        SendSMS(to=form.to.data, body=form.body.data)
         return redirect('/')
 
     return render_template(
